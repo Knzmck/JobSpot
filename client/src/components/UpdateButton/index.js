@@ -11,11 +11,15 @@ export default function UpdateButton(props) {
     const activeJob = user.Jobs.find((job) => job.id === id);
     setUser({ ...user, activeJob: activeJob });
     history.push(`/update-job/${id}`);
-  }
+  };
+
+  const styles = {
+    fontFamily: ["Roboto Slab", "serif"],
+  };
 
   return (
-    <Button color="teal" onClick={onClick}>
+    <Button style={styles} basic color="teal" onClick={onClick}>
       Update
-    </Button> 
-    );
+    </Button>
+  );
 }

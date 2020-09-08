@@ -4,48 +4,49 @@ import "./Footer.css";
 
 const styles = {
   footerContainer: {
-    backgroundColor: "rgb(22 25 29)",
+    backgroundColor: "#ccf5ff",
     textAlign: "center",
     padding: 10,
-    fontFamily: "Times New Roman",
+    fontFamily: ["Roboto Slab", "serif"],
     width: "100%",
     display: "inline-block",
-    fontSize: "1em",
-    margin: "0px!important",
-    color: "#F29F05",
+    fontSize: "18px",
     position: "fixed",
     left: 0,
     bottom: 0,
     right: 0,
     borderTop: "2px solid white",
-    marginTop: 20
-  
+    marginTop: "20px!important",
   },
   github: {
-    color: "#F24405",
+    color: "#ff9f29",
     fontSize: "1.3em",
     fontWeight: "bold",
     textDecoration: "underline",
-    fontFamily: "Times New Roman"
-  }
-}
+    fontFamily: ["Roboto Slab", "serif"],
+  },
+  shadow: {
+    textShadow: "1px 1px #a929ff, 1px 1px #a929ff",
+  },
+};
 export default function Footer() {
   return (
     <Container fluid style={styles.footerContainer} id="footer-container">
       <List id="footer-list">
-        <List.Item style={styles.github} id="github"
+        <List.Item
+          style={styles.github}
+          id="github"
           as="a"
           href="https://github.com/anverch/jobspot"
           target="_blank"
         >
           GitHub Repository
-          </List.Item>
+        </List.Item>
       </List>
-      <p>
+      <p style={styles.shadow}>
         Copyright 2020 Emily Wirtz, Aleks Saiyan, Emily Carlisle, & Mackenzie
         Schutz
-        </p>
+      </p>
     </Container>
-
   );
 }

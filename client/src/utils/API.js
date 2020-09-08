@@ -24,8 +24,24 @@ export default {
     return axios.put("/api/jobs/" + id, updatedJob);
   },
   //Saves a new job to the database
-  saveJob: function (jobInfo) {
+  createJob: function (jobInfo) {
     return axios.post("/api/jobs", jobInfo);
+  },
+  //The next 5 calls return jobs with a given status, used in JobsCounter component
+  getJobsPending: function () {
+    return axios.get("/api/jobs/pending");
+  },
+  getJobsInterested: function (id) {
+    return axios.get("/api/jobs/interested/" + id);
+  },
+  getJobsApplied: function (id) {
+    return axios.get("/api/jobs/applied/" + id);
+  },
+  getJobsInProcess: function (id) {
+    return axios.get("/api/jobs/inprocess/" + id);
+  },
+  getJobsClosed: function (id) {
+    return axios.get("/api/jobs/closed/" + id);
   },
   //Gets all users
   getUsers: function () {
@@ -35,13 +51,13 @@ export default {
   getUser: function (id) {
     return axios.get("/api/users/" + id);
   },
-  //Updates on user based on id
-  updateUser: function (id) {
-    return axios.put("/api/users/" + id);
-  },
   //Saves a new user to the database
   createUser: function (userInfo) {
     return axios.post("/api/users", userInfo);
+  },
+  //Updates on user based on id
+  updateUser: function (id) {
+    return axios.put("/api/users/" + id);
   },
   deleteUser: function (id) {
     return axios.delete("/api/users/" + id);
@@ -56,5 +72,6 @@ export default {
   // Logout
   logout: function () {
     return axios.post("/api/users/logout");
-  },
+
+  }
 };
